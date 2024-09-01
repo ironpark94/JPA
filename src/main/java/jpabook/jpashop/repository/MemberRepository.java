@@ -13,6 +13,8 @@ public class MemberRepository {
     EntityManager em;
 
     public Long save(Member member){
+        //member를 리턴하지 않고 ID를 리턴하는이유?
+        //커멘드와 쿼리를 분리하는 전략
         em.persist(member);
         return member.getId();
     }
